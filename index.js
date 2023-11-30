@@ -24,7 +24,10 @@ for (const key of keys){
         key.classList.add("clicked");
     });
     key.addEventListener("mouseup", function () {
-        wait(300).then( () => key.classList.remove("clicked"));
+        wait(300).then( () => { keys.forEach(keyElement => {
+            keyElement.classList.remove("clicked");
+        });
+    });
     });
     const keyLetter = Array.from(key.classList).find(className => soundMap.hasOwnProperty(className));
     if (key.classList.contains(keyLetter)) {
@@ -49,6 +52,9 @@ document.addEventListener("keydown", function(event) {
         soundArray[pressed - 1].play();
         currentSound = soundArray[pressed - 1];
         document.querySelector(`.${noteArray[pressed - 1]}`).classList.add("clicked");
-        wait(300).then( () => document.querySelector(`.${noteArray[pressed - 1]}`).classList.remove("clicked"));
+        wait(300).then( () => { keys.forEach(keyElement => {
+            keyElement.classList.remove("clicked");
+        });
+    });
     };
 });
