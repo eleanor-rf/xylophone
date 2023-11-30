@@ -1,9 +1,5 @@
 const keys = document.querySelectorAll(".key");
 
-function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 const soundMap = {
     "c": new Audio("./sounds/C.wav"),
     "d": new Audio("./sounds/D.wav"),
@@ -24,10 +20,11 @@ for (const key of keys){
         key.classList.add("clicked");
     });
     key.addEventListener("mouseup", function () {
-        wait(300).then( () => { keys.forEach(keyElement => {
+       setTimeout(function() {
+        keys.forEach(keyElement => {
             keyElement.classList.remove("clicked");
-        });
-    });
+            });
+            }, 100);
     });
     const keyLetter = Array.from(key.classList).find(className => soundMap.hasOwnProperty(className));
     if (key.classList.contains(keyLetter)) {
@@ -52,9 +49,12 @@ document.addEventListener("keydown", function(event) {
         soundArray[pressed - 1].play();
         currentSound = soundArray[pressed - 1];
         document.querySelector(`.${noteArray[pressed - 1]}`).classList.add("clicked");
-        wait(300).then( () => { keys.forEach(keyElement => {
+       
+       setTimeout(function() {
+        keys.forEach(keyElement => {
             keyElement.classList.remove("clicked");
-        });
-    });
+            });
+            }, 100);
+       
     };
 });
