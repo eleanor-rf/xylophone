@@ -1,0 +1,128 @@
+body {
+    background-color: #fff1e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    font-family: 'Lilita One', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+    letter-spacing: 3px;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+    font-size: 4rem;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(8,1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    width: 700px;
+    height: 500px;
+    align-items: center;
+}
+
+.container:after{
+    content: '';
+    position: absolute;   
+    display: flex;
+    top: 22%;
+    left: 0px;
+    width: 700px;
+    height: 20px;
+    -webkit-transform:
+            rotate(8deg); 
+    background-color:#A1662F;
+    box-shadow:1px 4px rgb(110, 72, 31);
+  }
+
+.container:before{
+    content: '';
+    position: absolute;   
+    display: flex;
+    bottom: 30%;
+    left: 0px;
+    width: 700px;
+    height: 20px;
+    -webkit-transform:
+            rotate(-8deg); 
+    background-color:#A1662F;
+    box-shadow:1px 4px rgb(110, 72, 31);
+  }
+
+.key {
+    border-radius: 25px;
+    box-shadow: inset -3px -3px rgba(31, 29, 26, 0.3), inset 3px 3px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    color: black;
+    font-weight: bold;;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.c {
+    height: 100%;
+    background-color: #ff493c;
+}
+
+.d {
+    height: 93%;
+    background-color: #ff7b29;
+}
+
+.e {
+    height: 86%;
+    background-color: #ffcd38;
+}
+
+.f {
+    height: 79%;
+    background-color: #efff44;
+}
+
+.g {
+    height: 72%;
+    background-color: #43f55a;
+}
+
+.a {
+    height: 65%;
+    background-color: #49d1f7;
+}
+
+.b {
+    height: 58%;
+    background-color: #a855f5;
+}
+
+.c1 {
+    height: 51%;
+    background-color: #8556f3;
+}
+
+.label {
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.clicked {
+    box-shadow: inset -3px -3px rgba(31, 29, 26, 0.3), inset 3px 3px rgba(255, 255, 255, 0.5), rgb(85, 91, 255) 0px 0px 0px 1px, rgb(31, 193, 27) 0px 0px 0px 2px, rgb(255, 217, 19) 0px 0px 0px 3px, rgb(255, 156, 85) 0px 0px 0px 4px, rgb(255, 85, 85) 0px 0px 0px 5px;
+}
